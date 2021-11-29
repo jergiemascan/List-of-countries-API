@@ -1,0 +1,61 @@
+li {
+  list-style: none;
+  padding: 0.4rem;
+}
+
+.container {
+  border: 1px solid #000;
+  margin: 4rem auto;
+  max-width: 96rem;
+  display: flex;
+  justify-content: space-around;
+}
+#details {
+  max-width: 20rem;
+}
+tr {
+  background-color: lightskyblue;
+}
+.input {
+  margin: 1.5rem;
+  align-self: center;
+  max-width: 96rem;
+  text-align: center;
+}
+input {
+  padding: 0.3rem;
+}
+#details {
+  min-width: 25rem;
+}
+#states {
+  /* border: 1px solid #000; */
+  min-width: 35rem;
+  text-align: center;
+}
+.state-list {
+  background-color: lightskyblue;
+}
+h2 {
+  border: 1px solid #000;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#table-country-details {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.87);
+}
+
+.errorMessage {
+  padding: 1rem;
+  border: 1px solid #000;
+}
+#btn-search {
+  border-radius: 0.9rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px #fff;
+  background-color: rgba(36, 35, 35, 0.667);
+  color: #fff;
+  font-size: 0.9rem;
+}
