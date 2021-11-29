@@ -11,8 +11,11 @@
     <div class="container">
       <section id="countries">
         <div class="input">
-          <input id="search-country" placeholder="Search Countries" />
-          <button id="btn-search" name="country" type="submit">Search</button>
+          <input
+            id="search-country"
+            placeholder="Search Countries"
+            onKeyDown="searchCountry(event)"
+          />
         </div>
         <table id="table-country"></table>
       </section>
