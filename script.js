@@ -57,19 +57,23 @@ function getCountryDetails(btnDetails) {
         requestOptions
       );
       const countryDetails = await responseCountryDetails.json();
-      // console.log(countryDetails);
+      console.log(countryDetails);
+      console.log(countryDetails.capital);
 
-      let details = JSON.stringify(countryDetails);
-      let parts = details.split(",");
-      let result = "";
-      parts.forEach((value) => {
-        result += `${value + "\n"}`;
-      });
-      // console.log(details);
-      // console.log(result);
       const tableDetails = document.getElementById("table-country-details");
       tableDetails.innerHTML = "";
-      tableDetails.append(result);
+      // tableDetails.append(countryDetails);
+      tableDetails.innerHTML = `
+      <li>Native: ${countryDetails.native}</li>
+      <li>Name: ${countryDetails.name}</li>
+      <li>Numeric_code: ${countryDetails.numeric_code}</li>
+      <li>iso2: ${countryDetails.iso2}</li>
+      <li>Capital: ${countryDetails.capital}</li>
+      <li>Region: ${countryDetails.region}</li>
+      <li>Currency: ${countryDetails.currency}</li>
+      <li>Subregion: ${countryDetails.subregion}</li>
+      
+      `;
     });
   }
 }
@@ -104,11 +108,12 @@ function searchCountry(countries) {
     const searchCountry = countries.filter((count) => {
       if (input.value === count.name) {
         tableCountries.innerHTML = `
-        <li class="country-list">${count.name} ${count.iso2}
-          <button class="btn-details" id=${count.iso2} value=${count}>Details</button>
-          <button class="btn-states" id=${count.iso2}>States</button>
-        </li>
-        `;
+        <td>
+          <li class="country-list">${count.name} ${count.iso2}
+            <button class="btn-details" id=${count.iso2} value=${count}>Details</button>
+            <button class="btn-states" id=${count.iso2}>States</button>
+          </li>
+        </td> `;
         getCountryDetails(btnDetails);
         getCountryStates(btnStates);
       }
