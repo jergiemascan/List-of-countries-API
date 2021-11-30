@@ -28,9 +28,10 @@ async function getAllCountries() {
     for (let country of countries) {
       tableCountries.innerHTML += `
         <td>
-          <li class="country-list">${country.name} ${country.iso2}
-            <button onClick="getCountryDetails(event)"  id=${country.iso2}>Details</button>
-            <button onClick="getCountryStates(event)" id=${country.iso2}>States</button>
+          <li class="country-list">${country.name}
+          <p class="iso"> ${country.iso2}</p>
+            <button class="btn" onClick="getCountryDetails(event)"  id=${country.iso2}>Details</button>
+            <button  onClick="getCountryStates(event)" id=${country.iso2}>States</button>
           </li>
         </td>
       `;
@@ -98,7 +99,9 @@ async function getCountryStates(event) {
     } else {
       tableStates.innerHTML = "";
       for (let state of countryStatesData) {
-        tableStates.innerHTML += `<li class="state-list">${state.name} ${state.iso2}</li>`;
+        tableStates.innerHTML += `<li class="state-list">${state.name} 
+        <p class="state-iso">${state.iso2}</p>
+        </li>`;
       }
     }
   } catch (error) {
@@ -115,13 +118,14 @@ function searchCountry(event) {
     for (let country of allCountries) {
       if (country.name.includes(capitalizeFirstLetter(inputValue))) {
         tableCountries.innerHTML += `
-    <td>
-      <li class="country-list">${country.name} ${country.iso2}
-        <button onClick="getCountryDetails(event)"  id=${country.iso2}>Details</button>
-        <button onClick="getCountryStates(event)" id=${country.iso2}>States</button>
-      </li>
-    </td>
-    `;
+        <td>
+          <li class="country-list">${country.name}
+          <p class="iso"> ${country.iso2}</p>
+            <button class="btn" onClick="getCountryDetails(event)"  id=${country.iso2}>Details</button>
+            <button  onClick="getCountryStates(event)" id=${country.iso2}>States</button>
+          </li>
+        </td>
+      `;
       }
     }
   } catch (error) {
