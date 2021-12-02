@@ -30,8 +30,8 @@ async function getAllCountries() {
         <td>
           <li class="country-list">${country.name}
           <p class="iso"> ${country.iso2}</p>
-            <button class="btn" onClick="getCountryDetails(event)"  id=${country.iso2}>Details</button>
-            <button  onClick="getCountryStates(event)" id=${country.iso2}>States</button>
+          <button class="btn" onClick="getCountryDetails(event)"  id=${country.iso2}>Details</button>
+          <button  onClick="getCountryStates(event)" id=${country.iso2}>States</button>
           </li>
         </td>
       `;
